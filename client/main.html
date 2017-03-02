@@ -1,0 +1,23 @@
+
+
+<body>
+  {{> hello}}
+</body>
+
+<template name="hello">
+    <button {{b "visible:!userId, click:createUser"}}>Create user</button>
+
+
+    <div {{b "visible:userId"}}>
+        <p>Your User Id: {{userId}}</p>
+        <input type="text" {{b "value:foreignUserId"}} placeholder="Foreign UserID"/>
+        <button {{b "click:connectUser"}}>Connect</button>
+    </div>
+
+
+    <div {{b "visible:connected"}}>
+        <input type="text" {{b "change:logTyping"}} placeholder="Just type"/>
+        <p {{b "visible:foreignUserIsTyping"}}>Foreign user is typing...</p>
+    </div>
+
+</template>
